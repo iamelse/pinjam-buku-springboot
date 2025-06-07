@@ -32,15 +32,21 @@ API sederhana untuk sistem peminjaman buku menggunakan Spring Boot. Aplikasi ini
 ```bash
 src/
 └── main/
-├── java/com/iamelse/iamelse/
-│ ├── controller/
-│ ├── service/
-│ ├── model/
-│ ├── dto/
-│ └── repository/
-└── resources/
-├── application.properties
-└── data.sql
+    ├── java/
+    │   └── com/
+    │       └── iamelse/
+    │           └── iamelse/
+    │               ├── config/          # Konfigurasi global seperti SwaggerConfig, SecurityConfig
+    │               ├── controller/      # REST Controllers (endpoint)
+    │               ├── dto/             # DTO untuk request & response
+    │               ├── exception/       # Custom exception & handler
+    │               ├── model/           # Entity kelas (Book, BorrowTransaction, dll.)
+    │               ├── repository/      # Interface untuk JPA Repository
+    │               ├── security/        # Kelas security (jika digunakan di masa depan, seperti JWT)
+    │               └── service/         # Business logic (BorrowService, BookService, dll.)
+    └── resources/
+        ├── application.properties       # Konfigurasi Spring
+        └── data.sql                     # Inisialisasi data
 ```
 ---
 ## 🔐 Swagger UI
